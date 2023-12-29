@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title> Welcome to <%= appName %> </title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<header>
+    <img src="/manners_logo.png" alt="Web Application Logo">
+</header>
+<body>
+    <h1 id="register">Register</h1>
+    <form method="post" action="/registered">
+        <label>First Name: <input id="first" type="text" name="first" placeholder="Jane"></label>
+        <br>
+        <label>Surname: <input id="surname" type="text" name="surname" placeholder="Doe"></label>
+        <br>
+        <label>Email Address: <input id="email" type="email" name="email" placeholder="eg. jane.doe@email.com"></label>
+        <br>
+        <label>Password: <input id="password" type="password" name="password"></label>
+        <br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+<footer>
+    <a href="./">
+        <img src="/back.png" alt="back button" width="25px" height="25px">
+    </a>
+</footer>

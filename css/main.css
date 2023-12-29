@@ -1,0 +1,41 @@
+body {
+    background-color: #BDD1E5;
+}
+header {
+    width: 300px;
+    height: 300px;
+    margin-left: 420px;
+}
+footer {
+    margin-top: 100px;
+}
+h1 {
+    text-decoration: underline;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    text-align: center;
+}
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+[href="forgotten_password.ejs"] {
+    color: grey;
+    text-decoration: none;
+    font-size: small;
+    font-family: monospace;
+}
+[href="forgotten_password.ejs"]:hover {
+    text-decoration: underline;
+}
+input[type=submit] {
+    background-color: #BDD1E5;
+}
+button > a {
+    background: transparent;
+    border-radius: 20px;
+    font-size: 20px;
+}

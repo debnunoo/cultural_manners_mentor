@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title> Welcome to <%= appName %> </title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<header>
+    <img src="/manners_logo.png" alt="Web Application Logo">
+</header>
+<body>
+    <h1 id="login"> Login </h1>
+    <form method="post" action="/loggedin">
+        <label>Email address: <input id="email" type="email" name="email" placeholder="eg. jane.doe@email.com"></label>
+        <br>
+        <label>Password: <input id="password" type="password" name="password"></label>
+        <br>
+        <a href="forgotten_password.ejs">Forgotten Password?</a>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+<footer>
+    <a href="./">
+        <img src="/back.png" alt="back button" width="25px" height="25px">
+    </a>
+</footer>
