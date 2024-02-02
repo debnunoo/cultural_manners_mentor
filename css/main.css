@@ -22,13 +22,13 @@ label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
-[href="forgotten_password.ejs"] {
+[href="/forgottenPassword"] {
     color: grey;
     text-decoration: none;
     font-size: small;
     font-family: monospace;
 }
-[href="forgotten_password.ejs"]:hover {
+[href="/forgottenPassword"]:hover {
     text-decoration: underline;
 }
 input[type=submit] {

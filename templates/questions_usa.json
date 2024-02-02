@@ -1,0 +1,51 @@
+[
+    {
+        // https://codelibrary.amlegal.com/codes/texascity/latest/texascity_tx/0-0-0-4311
+        // https://malegislature.gov/Laws/GeneralLaws/PartIV/TitleI/Chapter270/Section14
+        "question": "In certain states, such as Texas and Massachusetts, is it illegal to spit on sidewalk(s)?",
+        "media": null,
+        "answerSelections": [
+            {"options": "True", "correct": true},
+            {"options": "False", "correct": false}
+        ]
+    },
+    {
+        "question":"What is happening in the video above and what should be done?",
+        "media": "<video src='/usa_talking.mp4' alt = 'People talking over each other' autoplay= 'true' ></video>",
+        "answerSelections": [
+            {"options": "Talking to each other. They have great listening skills and are responding to each other's claims.", "correct": false},
+            {"options": "Nothing. They are being respectful of and to each other!", "correct": false},
+            {"options": "Talking over each other and not listening. They should wait for the respective person to finish speaking.", "correct": true},
+            {"options": "They are intentionally ignoring each other. They should make eye contact, and conversate in a more appropriate manner.", "correct": false}
+        ]
+    },
+    {
+        "question": "When driving on the highway, which of the following could be viewed as an act of kindness?",
+        "media": null,
+        "answerSelections": [
+            {"options": "Driving at the specified speed limit", "correct": false},
+            {"options": "Displaying competitive driving by accelerating and tailgating the car in front", "correct": false},
+            {"options": "Being on the phone and texting relatives", "correct": false},
+            {"options": "Changing lanes to provide room for those joining the highway", "correct": true}
+        ]
+    },
+    {
+        // https://www.theguardian.com/society/2023/nov/24/will-the-swedish-say-hi-campaign-work-in-london-we-put-it-to-the-test
+        "question": "In the US, it is the norm to greet and smile at people solely in public.",
+        "media": "<img src='/americans_greet.jpg' alt='Americans getting one another'>",
+        "answerSelections": [
+            {"options": "True", "correct": false},
+            {"options": "False", "correct": true}
+        ]
+    },
+    {
+        "question": "When out in public, you unintentionally stand too close to another person. What would be the best response in this situation?",
+        "media": null,
+        "answerSelections": [
+            {"options": "Continue to get closer, further invading their personal space.", "correct": false},
+            {"options": "Bump into the person and act as if it is their fault.", "correct": false},
+            {"options": "Apologise and/or say excuse me before giving the other person some room.", "correct": true},
+            {"options": "You haven't done anything wrong so you continue to mind your business", "correct": false}
+        ]
+    }
+]

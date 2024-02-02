@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title> Welcome to <%= appName %> </title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<header>
+    <a href="/home">
+        <img src="/manners_logo.png" alt="Web Application Logo">
+    </a>
+</header>
+<body>
+    <h1>Add New Post</h1>
+    <form method="post" action="/postSubmitted">
+        <label>Title:</label>
+        <br>
+        <!-- <input list="posts" name="posts" id="posts"> -->
+        <!-- https://www.w3schools.com/tags/tag_datalist.asp -->
+        <!-- <datalist id="posts"> -->
+        <select>
+            <option disabled selected value>Choose Post</option>
+            <!-- <option><input placeholder="Add your own" type="text"></option> -->
+        </select>
+        <!-- </datalist> -->
+        <br>
+        <label>Content:</label>
+        <br>
+        <textarea id="review" name="review" rows="10" cols="20"></textarea>
+        <input type="submit" value="Post">
+    </form>
+</body>
+<footer>
+    <a href="/discussionForum">
+        <img src="/back.png" alt="back button" width="25px" height="25px">
+    </a>
+</footer>
+</html>

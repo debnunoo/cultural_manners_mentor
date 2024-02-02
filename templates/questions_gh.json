@@ -1,0 +1,60 @@
+// https://stackoverflow.com/questions/36452622/how-to-add-photo-and-video-to-json-quiz-format
+// https://codetime.io/series/working-with-json-data-php/episodes/adding-images-to-our-json-file
+
+[ 
+    {    
+        "question": "You attend an event, why is it important to greet others upon arrival?",
+        // https://www.kulturstudier.no/blog/2017/10/31/looking-into-the-ghanaian-culture/
+        "media": "<img src='/ghanaians_greeting.jpg' alt='Ghanaians getting one another'>",
+        "answerSelections": [
+            {"options": "They know each other so it only makes sense that they do.", "correct": false},
+            {"options": "They are following the lead of the person at the front so they must follow and continue the greetings.", "correct": false},
+            {"options": "It is important to the culture, but a person has a choice whether they want to follow the custom, whether they know them or not.", "correct": false},
+            {"options": "It is important to the culture and shows respect, despite whether there is an established relationship or not.", "correct": true}
+        ]
+    },
+    {
+        "question": "In Ghana, what is seen to be disrepectful?",
+        "media": null,
+        "answerSelections": [
+            {"options": "Talking to elders", "correct": false},
+            {"options": "Receiving items with your left hand", "correct": true},
+            {"options": "Going out all night", "correct": false},
+            {"options": "Being on the phone in public", "correct": false}
+        ]
+    },
+    {   
+        "question": "When in conversation with others, what should not be done?",
+        "answerSelections": [
+            {"options": "Insult someone then walk away", "correct": false},
+            {"options": "Be nice to those with authority, for example Chiefs or the President", "correct": false},
+            {"options": "Interject into another conversation with insults", "correct": true},
+            {"options": "Showing love and care to animals", "correct": false}
+        ]
+    },
+    {
+        "question": "Which of the following is encourged during interactions between Ghanaian elders and young people?",
+        // https://www.facebook.com/blackstarofafrica/photos/a.283218505619883/853413088600419/?type=3
+        "media": "<img src='/ghanaians_elders.jpg' alt='Ghanaians getting one another'>",
+        "answerSelections": [
+            {"options": "Being rude and disrespectful to the young", "correct": false},
+            {"options": "Elders should act respectful to young people and young people should reciprocate to elders", "correct": true},
+            {"options": "Elders should act respectful to young people", "correct": false},
+            {"options": "Only young people should be respectful to their elders", "correct": false}
+        ]
+    },
+    {
+        "question": "What behaviour(s) is commonly observed in Ghana?",
+        "media": null,
+        "answerSelections": [
+            {"options": "Being nice to everyone you meet", "correct": false},
+            {"options": "Greeting everyone you meet", "correct": false},
+            {"options": "Asking someone if they feel sick or down", "correct": false},
+            {"options": "All of the above", "correct": true}
+        ]
+    },
+    {
+        "correct": " ",
+        "incorrect": " "
+    }
+]
