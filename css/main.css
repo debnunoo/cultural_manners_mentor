@@ -98,7 +98,101 @@ th {
 
 button[type="button"] {
     margin-left: 1230px;
+}
+
+button {
+    margin-left: 450px;
     margin-top: 100px;
+    
+}
+button:hover {
+    background-color: lightgray;
+}
+
+.login {
+    margin-top: 100px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: black;
+    height: 40px;
+    width: 30%;
+   
+}
+
+[href="/login"] {
+    color: black;
+    font-size: 25px;
+}
+
+[href="/login"]:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.register {
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: black;
+    height: 40px;
+    width: 30%;
+}
+
+[href="/register"] {
+    color: black;
+    font-size: 25px;
+}
+
+[href="/register"]:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.uk {
+    margin-left: 500px;
+    margin-top: 40px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: black;
+    height: 40px;
+    width: 30%;
+}
+
+.usa {
+    margin-left: 500px;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: black;
+    height: 40px;
+    width: 30%;
+}
+
+.ghana {
+    margin-left: 500px;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: black;
+    height: 40px;
+    width: 30%;
+}
+
+/* https://www.w3schools.com/howto/howto_css_overlay.asp */
+#overlay {
+    position: fixed;
+    margin-top: 70px;
+    height: 200px;
+    top: 50%;
+    left: 52%;
+
+    font-size: 50px;
+    line-height: 200px;
+    color: white;
+    transform: translate(-50%,-50%);
+    transform: rotate(90);
+    /* -ms-transform: translate(-50%,-50%); */
+    background-color: rgba(0,0,0,0.8);
 }
 
 #individual_forum {
