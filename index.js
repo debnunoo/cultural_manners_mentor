@@ -2,8 +2,9 @@ var express = require('express');
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var fileSystem = require('fs');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var { Client } = require('pg');
+var session = require('express-session');
 var dotenv = require('dotenv').config({path: 'credentials.env'});
 var validator = require('express-validator');
 var sanitizer = require('express-sanitizer');
@@ -13,9 +14,18 @@ const app = express()
 const port = 8000
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(sanitizer());
+app.use(session({
+    secret: 'somerandomstuff',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}));
 
 app.use(express.static(__dirname + '/css'));
 app.use(express.static(__dirname + '/assets'));
+app.use(express.static(__dirname + '/unit_test'));
 app.use(express.json());
 
 app.set('views', __dirname + '/templates');
@@ -47,7 +57,7 @@ client.connect((err) => {
         console.log('Database connection failed.', err.stack)
     }
     else {
-        ('Postgres database is connected')
+        console.log('Postgres database is connected');
     }
 })
 

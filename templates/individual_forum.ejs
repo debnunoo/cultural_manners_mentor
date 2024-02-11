@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title> Welcome to <%= appName %> </title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<header>
+    <a href="/home">
+        <img src="/manners_logo.png" alt="Web Application Logo">
+    </a>
+</header>
+<body>
+
+    <h1><%= individualPosts.post_title %> </h1>
+    <table id="individual_forum">
+        <tr>
+            <th>Username</th>
+            <th>Date</th>
+            <th>Content</th>
+        </tr>
+        <% individualPosts.forEach(function(posts) { %>
+            <% console.log(individualPosts); %>
+            <tr>
+                <td><%= posts.username %></td>
+                <td><%= posts.post_date %></td>
+                <td><%= posts.post_content %></td>
+            </tr>
+        <% }) %>
+
+        
+</body>
+</html>

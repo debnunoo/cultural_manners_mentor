@@ -2,17 +2,59 @@ body {
     background-color: #BDD1E5;
 }
 header {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     margin-left: 420px;
 }
 footer {
     margin-top: 100px;
+    position: sticky;
+    /* margin-bottom: 1000px; */
 }
 h1 {
     text-decoration: underline;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 45px;
+}
+
+.pass_log {
+    position: absolute;
+    left: 330px;
+    right: 40px;
+    top: 350px;
+}
+
+.pass_reg{
+    position: absolute;
+    left: 330px;
+    right: 60px; 
+    top: 468px;
+}
+
+#pass_pic {
+    width: 15px;
+    height: 15px;
+    /* text-align: center; */
+    margin-left: 50px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#pass_text {
+    visibility: hidden;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+    text-wrap: balance;
+    white-space: 50px;
+}
+
+#pass_info:hover #pass_text {
+    visibility: visible;
+    opacity: 3;
+    transition: 0.5s;
 }
 
 form {
@@ -39,3 +81,65 @@ button > a {
     border-radius: 20px;
     font-size: 20px;
 }
+
+table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 150px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+th {
+    text-align: center;
+    font-size: 20px;
+    font-family:monospace;
+}
+
+button[type="button"] {
+    margin-left: 1230px;
+    margin-top: 100px;
+}
+
+#individual_forum {
+    margin-top: 100px;
+}
+
+#newTitle {
+    margin-left: 600px;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 50%;   
+    height: 200px;
+}
+input[type="submit"] {
+    cursor: pointer;
+}
+
+[href="/logout"] {
+    color: black;
+    margin-top: 800px;
+    margin-left: 800px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+[href="/logout"]:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.disforumlink {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-left: 600px;
+    margin-bottom: 800px;
+}
+
+/* .forum_back {
+    margin-left: 50px;
+} */

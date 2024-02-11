@@ -2,6 +2,7 @@
 <head>
     <title> Welcome to <%= appName %> </title>
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <script src='/forum.js' type='text/javascript'></script>
 </head>
 <header>
     <a href="/home">
@@ -12,19 +13,21 @@
     <h1>Add New Post</h1>
     <form method="post" action="/postSubmitted">
         <label>Title:</label>
-        <br>
-        <!-- <input list="posts" name="posts" id="posts"> -->
-        <!-- https://www.w3schools.com/tags/tag_datalist.asp -->
-        <!-- <datalist id="posts"> -->
-        <select>
-            <option disabled selected value>Choose Post</option>
-            <!-- <option><input placeholder="Add your own" type="text"></option> -->
-        </select>
-        <!-- </datalist> -->
+            <input type="text" id="newTitle" placeholder="Enter a forum name"  name="title_input">
+            <!-- <select id="add_post" onchange="addPostTitle();" name = "titleOfPosts">
+                <option disabled selected value>Choose Post</option>
+                <%/* forumTitles.forEach(function(title) { %>
+                    <option id="existing_title" value="<%= title.post_id %>"><%= title.post_title %></option>
+                <% })*/ %>
+                <option id="new_title" value="new_title">Add your own</option>
+            </select>
+        
+        <input type="text" id="newTitle" placeholder="Start a new forum" style="display: none;" name="title_input">   -->
         <br>
         <label>Content:</label>
         <br>
-        <textarea id="review" name="review" rows="10" cols="20"></textarea>
+        <textarea id="review" name="review" required></textarea>
+        <br>
         <input type="submit" value="Post">
     </form>
 </body>

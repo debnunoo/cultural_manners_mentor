@@ -12,20 +12,20 @@
     <h1> Discussion Forum </h1>
     <table>
         <tr>
-            <thead>Post Name</thead>
-            <thead>Number of Participants</thead>
-            <thead>Last Modified</thead>
+            <th>Post Name</th>
+            <th>Number of Participants</th>
+            <th>Last Modified</th>
         </tr>
 
         <% forumPosts.forEach(function(forum) { %>
             <tr>
-                <td><%= forum.post_title %></td>
+                <td><a href="/discussionForum/<%= forum.post_title %>"><%= forum.post_title %></a></td>
                 <td><%= forum.num_participants %></td>
                 <td><%= forum.latest_date %></td>
             </tr>
         <% }) %>
     </table>
-
+    <br>
     <!-- ref -->
     <button type="button" onclick="window.location.href = 'addNewPost'">+ Create New</button>
 </body>

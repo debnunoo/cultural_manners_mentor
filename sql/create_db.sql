@@ -23,7 +23,7 @@ CREATE TABLE users (
 	user_id serial PRIMARY KEY,
 	first_name varchar(30) not null,
 	surname varchar(50) not null,
-	email varchar(100) not null, 
+	email varchar(100) not null unique, 
 	username varchar(20) not null unique,
 	hashedPassword varchar(255) not null
 );
@@ -33,9 +33,9 @@ CREATE TABLE users (
 CREATE TABLE forum (
 	post_id serial primary key, 
 	user_id int,
-	post_title varchar(100) not null,
+	post_title varchar(100),
 	post_content text not null,
-	username varchar(20) not null unique,
+	username varchar(20) not null,
 	date_added date not null,
 	foreign key(user_id) references users(user_id)
 );
