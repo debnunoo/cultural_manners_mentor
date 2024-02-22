@@ -5,7 +5,7 @@
     {    
         "question": "You attend an event, why is it important to greet others upon arrival?",
         // https://www.kulturstudier.no/blog/2017/10/31/looking-into-the-ghanaian-culture/
-        "media": "<img src='/ghanaians_greeting.jpg' alt='Ghanaians getting one another'>",
+        "media": "/ghanaians_greeting.jpg",
         "answerSelections": [
             {"options": "They know each other so it only makes sense that they do.", "correct": false},
             {"options": "They are following the lead of the person at the front so they must follow and continue the greetings.", "correct": false},
@@ -35,7 +35,7 @@
     {
         "question": "Which of the following is encourged during interactions between Ghanaian elders and young people?",
         // https://www.facebook.com/blackstarofafrica/photos/a.283218505619883/853413088600419/?type=3
-        "media": "<img src='/ghanaians_elders.jpg' alt='Ghanaians getting one another'>",
+        "media": "/ghanaians_elders.jpg",
         "answerSelections": [
             {"options": "Being rude and disrespectful to the young", "correct": false},
             {"options": "Elders should act respectful to young people and young people should reciprocate to elders", "correct": true},

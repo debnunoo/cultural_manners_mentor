@@ -9,29 +9,40 @@
     </a>
 </header>
 <body>
+    <div class="back">
+        <a href="/home">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+    </div>
     <h1> Discussion Forum </h1>
+    <!-- Brief description for discussion forum -->
+    <h4>This forum is a place to discuss all things mannerisms - whether that be manners observed in different cultures, those seen day-to-day or simply asking a question. Please feel free to interact, view posts and add your own!</h4>
+    <label>Filter by:</label>
+    <!-- <select id="options_filter">
+        <option value="post_ascending">Post Name Ascending</option>
+        <option value="post_descending">Post Name Descending</option>
+        <option value="recent_post">Most Recent Post</option>
+        <option value="participant_vol">Number of Participants</option>
+    </select> -->
+
     <table>
         <tr>
             <th>Post Name</th>
             <th>Number of Participants</th>
             <th>Last Modified</th>
         </tr>
-
-        <% forumPosts.forEach(function(forum) { %>
-            <tr>
-                <td><a href="/discussionForum/<%= forum.post_title %>"><%= forum.post_title %></a></td>
-                <td><%= forum.num_participants %></td>
-                <td><%= forum.latest_date %></td>
-            </tr>
-        <% }) %>
+        <tbody id="forum_rows">
+            <% forumPosts.forEach(function(forum) { %>
+                <tr>
+                    <td id="post_title"><a href="/discussionForum/<%= forum.post_title %>"><%= forum.post_title %></a></td>
+                    <td id="num_participants"><%= forum.num_participants %></td>
+                    <td id="latest_date"><%= forum.latest_date %></td>
+                </tr>
+            <% }) %>
+        </tbody>
     </table>
     <br>
     <!-- ref -->
     <button type="button" onclick="window.location.href = 'addNewPost'">+ Create New</button>
 </body>
-<footer>
-    <a href="/home">
-        <img src="/back.png" alt="back button" width="25px" height="25px">
-    </a>
-</footer>
 </html>

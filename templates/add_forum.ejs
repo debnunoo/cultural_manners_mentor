@@ -10,6 +10,11 @@
     </a>
 </header>
 <body>
+    <div class="back">
+        <a href="/discussionForum">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+    </div>
     <h1>Add New Post</h1>
     <form method="post" action="/postSubmitted">
         <label>Title:</label>
@@ -24,6 +29,7 @@
         
         <input type="text" id="newTitle" placeholder="Start a new forum" style="display: none;" name="title_input">   -->
         <br>
+        <br>
         <label>Content:</label>
         <br>
         <textarea id="review" name="review" required></textarea>
@@ -31,9 +37,4 @@
         <input type="submit" value="Post">
     </form>
 </body>
-<footer>
-    <a href="/discussionForum">
-        <img src="/back.png" alt="back button" width="25px" height="25px">
-    </a>
-</footer>
 </html>

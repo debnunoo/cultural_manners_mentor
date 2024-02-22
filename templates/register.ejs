@@ -10,6 +10,11 @@
     </a>
 </header>
 <body>
+    <div class="back">
+        <a href="./">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+    </div>
     <h1 id="register">Register</h1>
     <form method="post" action="/registered">
         <label>First Name: <input id="first" type="text" name="first" placeholder="Jane"></label>
@@ -29,18 +34,10 @@
         <div id="pass_info">
             <!-- https://www.flaticon.com/free-icon/info_9446643?term=i&page=1&position=9&origin=search&related_id=9446643 - Graphics Plazza -->
             <img src="/info.png" alt="Password info" id="pass_pic">
-            <p id="pass_text">Password must be at least <strong>8 characters long and contain 1 upper case, 1 lower case, 1 number and 1 special keyboard character </strong>.</p>
+            <p id="pass_text">Password must be at least <strong>8 characters and no more than 15 characters long and contain 1 upper case, 1 lower case, 1 number and 1 special keyboard character (choose any from @$!%*?&£=~|-#<>'_\/()") </strong>.</p>
         </div>
-        <input type="submit" value="Register" onclick="passwordCheck();">
+        <input type="submit" value="Register">
     </form>
 </body>
 
-
-
-<footer id="back_register">
-    <a href="./">
-        <!-- https://www.flaticon.com/search?word=back%20button - Bingge Liu -->
-        <img src="/back.png" alt="back button" width="25px" height="25px">
-    </a>
-</footer>
 </html>

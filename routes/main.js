@@ -3,7 +3,7 @@ const { post } = require('request');
 module.exports = function(app, mannersData) {
 
 // var c_learning = require('./cultural_learning.js');
-var fs = require('fs');
+// var fs = require('fs');
 
 const bcrypt = require('bcrypt');
 const { check, validationResult, body } = require('express-validator')
@@ -80,8 +80,8 @@ app.get('/logout', redirectLogin, function(req, res){
         }
             // sending message to user to indicate logging out has been successful
             res.send('You have successfully logged out. Please return to <a href= "/">Home</a>');
-        })
-})
+        });
+});
 
 app.get('/register', function(req, res){
     res.render('register.ejs', mannersData)
@@ -89,7 +89,7 @@ app.get('/register', function(req, res){
 
 var registrationValid = [
     check('email').isEmail().normalizeEmail().notEmpty(),
-    check('password').isLength({min: 8}).notEmpty(),
+    check('password').isLength({min: 8, max: 15}).notEmpty().withMessage('Password must be at least 8 characters, but no more than 15 characters long!'),
     check('first').notEmpty(),
     check('surname').notEmpty()
 ]
@@ -105,10 +105,10 @@ app.post('/registered', registrationValid, function(req, res) {
         const salt_rounds = 10
 
         // simplified from https://regexr.com/3bfsi
-        var regex = /^[A-Za-z\d@$!%*?&£=~|#<>_\/\\)('"^]{8,}$/;
+        var regex = /^[A-Za-z\d@$!%*?&£=~|\-#<>_\/\\)('"^]{8,15}$/;
         // https://stackoverflow.com/questions/74331431/how-i-can-validate-password-with-node-js
         if(!plaintextPass.match(regex)){
-            res.send("Please ensure your password is at least 8 characters long and contains 1 upper case, 1 lower case, 1 number and 1 special keyboard character");
+            res.send("Please ensure your password is at least 8 characters and no more than 15 characters long and contains 1 upper case, 1 lower case, 1 number and 1 special keyboard character");
         }
         else {
             const hashedPass = bcrypt.hashSync(plaintextPass, salt_rounds);
@@ -144,8 +144,8 @@ app.get('/forgottenPassword', function(req, res){
 // https://express-validator.github.io/docs/6.6.0/custom-error-messages
 var newPassValid = [
     check('email').isEmail().normalizeEmail().notEmpty(),
-    check('password').isLength({min: 8}).notEmpty().withMessage('Password must be at least 8 characters long!'),
-    check('confirm_pass').isLength({min: 8}).notEmpty(),
+    check('password').isLength({min: 8, max: 15}).notEmpty().withMessage('Password must be at least 8 characters, but no more than 15 characters long!'),
+    check('confirm_pass').isLength({min: 8, max: 15}).notEmpty(),
     check('password').custom((value, {req}) => {
         if(value !== req.body.confirm_pass) {
             throw new Error(
@@ -183,10 +183,10 @@ app.post('/passwordChanged', newPassValid, function(req, res){
                     const salt_rounds = 10
 
                     // simplified from https://regexr.com/3bfsi
-                    var regex = /^[A-Za-z\d@$!%*?&£=~|#<>_\/\\)('"^]{8,}$/;
+                    var regex = /^[A-Za-z\d@$!%*?&£=~|\-#<>_\/\\)('"^]{8,15}$/;
                     // https://stackoverflow.com/questions/74331431/how-i-can-validate-password-with-node-js
                     if(!plaintextPass.match(regex)){
-                        res.send("Please ensure your password is at least 8 characters long and contains 1 upper case, 1 lower case, 1 number and 1 special keyboard character");
+                        res.send("Please ensure your password is at least 8 characters and no more than 15 characters long and contains 1 upper case, 1 lower case, 1 number and 1 special keyboard character");
                     }
                     const hashedPass = bcrypt.hashSync(plaintextPass, salt_rounds);
 
@@ -312,13 +312,13 @@ app.get('/discussionForum/:post_title', function(req, res) {
     var post_title = req.params.post_title;
 
     // retrieving the post_title from the body to retrieve details from the database
-    var titleToRetrieve = req.body.post_title;
+    // var titleToRetrieve = req.body.post_title;
     
     let query = `SELECT username, TO_CHAR(date_added, 'DD/MM/YYYY') AS post_date, post_content, post_title
                  FROM forum
                  WHERE post_title = $1;`;
-    
-    client.query(query, [titleToRetrieve], (error, result) => {
+
+    client.query(query, [post_title], (error, result) => {
         if(error) {
             res.redirect('/discussionForum');
             console.log(error);
@@ -328,10 +328,8 @@ app.get('/discussionForum/:post_title', function(req, res) {
             console.log(result.rows);
             res.render('individual_forum.ejs', data);
         }
-    })
-
-
-})
+    });
+});
 
 
 }

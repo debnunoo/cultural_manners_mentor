@@ -9,23 +9,27 @@
     </a>
 </header>
 <body>
-
-    <h1><%= individualPosts.post_title %> </h1>
-    <table id="individual_forum">
-        <tr>
-            <th>Username</th>
-            <th>Date</th>
-            <th>Content</th>
-        </tr>
-        <% individualPosts.forEach(function(posts) { %>
-            <% console.log(individualPosts); %>
+    <div class="back">
+        <a href="/discussionForum">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+    </div>
+    <% individualPosts.forEach(function(posts) { %>
+        <h1><%= posts.post_title %> </h1>
+        <table id="individual_forum">
             <tr>
-                <td><%= posts.username %></td>
+                <th>Username</th>
+                <th>Date</th>
+                <th>Content</th>
+            </tr>
+            <tr>
+                <td><%= posts.username %></a></td>
                 <td><%= posts.post_date %></td>
                 <td><%= posts.post_content %></td>
             </tr>
-        <% }) %>
-
-        
+            <% }) %>
+        </table>
+    <!-- ref -->
+    <button type="button" onclick="window.location.href = 'addNewPost'" id="add_from_individual">+ Add post</button>
 </body>
 </html>
