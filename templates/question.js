@@ -1,168 +1,167 @@
-const uk_q = [
-    {
-        // https://www.bbc.com/future/article/20170320-we-hate-to-admit-it-but-brits-arent-the-best-at-queuing
-        "question": "You are on holiday and decide to visit Buckingham Palace. You are arrive and see people queuing. What do you do?",
-        "media": "<img src='/brits_queuing.jpg' alt='British people queuing for Buckingham Palace'>",
-        "answerSelections": [
-            {"options": "You skip the line and use being a tourist as an excuse.", "correct": false},
-            {"options": "You go and plead with people until they see your point of view.", "correct": false},
-            {"options": "You respect that people may have been there for hours so you join the back of the queue and wait patiently.", "correct": true},
-            {"options": "You sit on the floor, in front of the guards, in protest.", "correct": false}
-        ]
-    },
-    {
-        "question": "You are in a rush and are behind someone who was walking slowly but has now abruptly stopped on the pavement. What should you do?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Politely say excuse me and walk around them.", "correct": true},
-            {"options": "Insult and barge them out of the way.", "correct": false},
-            {"options": "Shout at them to move out at the way.", "correct": false},
-            {"options": "Leave them and wait for them to continue walking.", "correct": false}
-        ]
-    },
-    {
-        // https://www.youtube.com/shorts/B21_-bmB9oA
-        "question": "From the following video, who would be considered to be in the wrong?",
-        "media": "<video src='/priority_seats.mp4' alt = 'People arguing about priority seats on UK bus' autoplay= 'true' ></video>",
-        "answerSelections": [
-            {"options": "The woman in the green jacket - there are other seats for her sit down.", "correct": false},
-            {"options": "The woman in the red jacket - she shouldn't have spoken back.", "correct": false},
-            {"options": "No one, both of their views are respected, understood and correct.", "correct": false},
-            {"options": "They both are - the woman in the green jacket shouldn't be shouting. But the woman in the red jacket should've given up her seat to her as an 'elderly person'.", "correct": true}
-        ]
-    },
-    {
-        "question": "Of the following, when would the phrases 'please' and 'thank you' be best suited?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Ordering food within a restaurant/cafe, and the waiter/waitress bringing it to you.", "correct": true},
-            {"options": "Watching tv at home with family.", "correct": false},
-            {"options": "Joining an at-home Peloton class.", "correct": false},
-            {"options": "Sitting on a park bench whilst eating lunch with colleagues.", "correct": false}
-        ]
-    },
-    {
-        "question": "You are on underground on packed train and you feel that you are about to cough. What should you do?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Cover your mouth with your elbow/hand when the cough comes.", "correct": true},
-            {"options": "Do nothing. Everyone coughs so who cares?", "correct": false},
-            {"options": "You cough into the atmosphere without covering.", "correct": false},
-            {"options": "You push down the cough, and drink water instead.", "correct": false}
-        ]
-    }
-];
-
-
-const gh_q = [
-    {    
-        "question": "You attend an event, why is it important to greet others upon arrival?",
-        // https://www.kulturstudier.no/blog/2017/10/31/looking-into-the-ghanaian-culture/
-        "media": "/ghanaians_greeting.jpg",
-        "answerSelections": [
-            {"options": "They know each other so it only makes sense that they do.", "correct": false},
-            {"options": "They are following the lead of the person at the front so they must follow and continue the greetings.", "correct": false},
-            {"options": "It is important to the culture, but a person has a choice whether they want to follow the custom, whether they know them or not.", "correct": false},
-            {"options": "It is important to the culture and shows respect, despite whether there is an established relationship or not.", "correct": true}
-        ]
-    },
-    {
-        "question": "In Ghana, what is seen to be disrepectful?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Talking to elders", "correct": false},
-            {"options": "Receiving items with your left hand", "correct": true},
-            {"options": "Going out all night", "correct": false},
-            {"options": "Being on the phone in public", "correct": false}
-        ]
-    },
-    {   
-        "question": "When in conversation with others, what should not be done?",
-        "answerSelections": [
-            {"options": "Insult someone then walk away", "correct": false},
-            {"options": "Be nice to those with authority, for example Chiefs or the President", "correct": false},
-            {"options": "Interject into another conversation with insults", "correct": true},
-            {"options": "Showing love and care to animals", "correct": false}
-        ]
-    },
-    {
-        "question": "Which of the following is encourged during interactions between Ghanaian elders and young people?",
-        // https://www.facebook.com/blackstarofafrica/photos/a.283218505619883/853413088600419/?type=3
-        "media": "/ghanaians_elders.jpg",
-        "answerSelections": [
-            {"options": "Being rude and disrespectful to the young", "correct": false},
-            {"options": "Elders should act respectful to young people and young people should reciprocate to elders", "correct": true},
-            {"options": "Elders should act respectful to young people", "correct": false},
-            {"options": "Only young people should be respectful to their elders", "correct": false}
-        ]
-    },
-    {
-        "question": "What behaviour(s) is commonly observed in Ghana?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Being nice to everyone you meet", "correct": false},
-            {"options": "Greeting everyone you meet", "correct": false},
-            {"options": "Asking someone if they feel sick or down", "correct": false},
-            {"options": "All of the above", "correct": true}
-        ]
-    },
-    {
-        "correct": " ",
-        "incorrect": " "
-    }
-];
-
-const usa_q = [
-    {
-        // https://codelibrary.amlegal.com/codes/texascity/latest/texascity_tx/0-0-0-4311
-        // https://malegislature.gov/Laws/GeneralLaws/PartIV/TitleI/Chapter270/Section14
-        "question": "In certain states, such as Texas and Massachusetts, is it illegal to spit on sidewalk(s)?",
-        "media": null,
-        "answerSelections": [
-            {"options": "True", "correct": true},
-            {"options": "False", "correct": false}
-        ]
-    },
-    {
-        "question":"What is happening in the video above and what should be done?",
-        "media": "<video src='/usa_talking.mp4' alt = 'People talking over each other' autoplay= 'true' ></video>",
-        "answerSelections": [
-            {"options": "Talking to each other. They have great listening skills and are responding to each other's claims.", "correct": false},
-            {"options": "Nothing. They are being respectful of and to each other!", "correct": false},
-            {"options": "Talking over each other and not listening. They should wait for the respective person to finish speaking.", "correct": true},
-            {"options": "They are intentionally ignoring each other. They should make eye contact, and conversate in a more appropriate manner.", "correct": false}
-        ]
-    },
-    {
-        "question": "When driving on the highway, which of the following could be viewed as an act of kindness?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Driving at the specified speed limit", "correct": false},
-            {"options": "Displaying competitive driving by accelerating and tailgating the car in front", "correct": false},
-            {"options": "Being on the phone and texting relatives", "correct": false},
-            {"options": "Changing lanes to provide room for those joining the highway", "correct": true}
-        ]
-    },
-    {
-        // https://www.theguardian.com/society/2023/nov/24/will-the-swedish-say-hi-campaign-work-in-london-we-put-it-to-the-test
-        "question": "In the US, it is the norm to greet and smile at people solely in public.",
-        "media": "<img src='/americans_greet.jpg' alt='Americans getting one another'>",
-        "answerSelections": [
-            {"options": "True", "correct": false},
-            {"options": "False", "correct": true}
-        ]
-    },
-    {
-        "question": "When out in public, you unintentionally stand too close to another person. What would be the best response in this situation?",
-        "media": null,
-        "answerSelections": [
-            {"options": "Continue to get closer, further invading their personal space.", "correct": false},
-            {"options": "Bump into the person and act as if it is their fault.", "correct": false},
-            {"options": "Apologise and/or say excuse me before giving the other person some room.", "correct": true},
-            {"options": "You haven't done anything wrong so you continue to mind your business", "correct": false}
-        ]
-    }
-];
-
-
-export default {uk_q, gh_q, usa_q};
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+/* exporting the different questions, media and answer options so that it can be used within 'cultural_learning.js'
+ default export allows the objects to be imported with any name */
+export default {
+    uk_q: [
+        {
+            // https://www.bbc.com/future/article/20170320-we-hate-to-admit-it-but-brits-arent-the-best-at-queuing
+            "question": "You are on holiday and decide to visit Buckingham Palace. You are arrive and see people queuing. What do you do?",
+            "media": "<img src='/brits_queuing.jpg' alt='British people queuing for Buckingham Palace'>",
+            "answerSelections": [
+                {"options": "You skip the line and use being a tourist as an excuse.", "correct": false},
+                {"options": "You go and plead with people until they see your point of view.", "correct": false},
+                {"options": "You respect that people may have been there for hours so you join the back of the queue and wait patiently.", "correct": true},
+                {"options": "You sit on the floor, in front of the guards, in protest.", "correct": false}
+            ]
+        },
+        {
+            "question": "You are in a rush and are behind someone who was walking slowly but has now abruptly stopped on the pavement. What should you do?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Politely say excuse me and walk around them.", "correct": true},
+                {"options": "Insult and barge them out of the way.", "correct": false},
+                {"options": "Shout at them to move out at the way.", "correct": false},
+                {"options": "Leave them and wait for them to continue walking.", "correct": false}
+            ]
+        },
+        {
+            // https://www.youtube.com/shorts/B21_-bmB9oA
+            "question": "From the following video, who would be considered to be in the wrong?",
+            "media": "<video src='/priority_seats.mp4' alt = 'People arguing about priority seats on UK bus' autoplay= 'true' ></video>",
+            "answerSelections": [
+                {"options": "The woman in the green jacket - there are other seats for her sit down.", "correct": false},
+                {"options": "The woman in the red jacket - she shouldn't have spoken back.", "correct": false},
+                {"options": "No one, both of their views are respected, understood and correct.", "correct": false},
+                {"options": "They both are - the woman in the green jacket shouldn't be shouting. But the woman in the red jacket should've given up her seat to her as an 'elderly person'.", "correct": true}
+            ]
+        },
+        {
+            "question": "Of the following, when would the phrases 'please' and 'thank you' be best suited?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Ordering food within a restaurant/cafe, and the waiter/waitress bringing it to you.", "correct": true},
+                {"options": "Watching tv at home with family.", "correct": false},
+                {"options": "Joining an at-home Peloton class.", "correct": false},
+                {"options": "Sitting on a park bench whilst eating lunch with colleagues.", "correct": false}
+            ]
+        },
+        {
+            "question": "You are on underground on packed train and you feel that you are about to cough. What should you do?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Cover your mouth with your elbow/hand when the cough comes.", "correct": true},
+                {"options": "Do nothing. Everyone coughs so who cares?", "correct": false},
+                {"options": "You cough into the atmosphere without covering.", "correct": false},
+                {"options": "You push down the cough, and drink water instead.", "correct": false}
+            ]
+        }
+    ],
+    gh_q: [
+        {    
+            "question": "You attend an event, why is it important to greet others upon arrival?",
+            // https://www.kulturstudier.no/blog/2017/10/31/looking-into-the-ghanaian-culture/
+            "media": "/ghanaians_greeting.jpg",
+            "answerSelections": [
+                {"options": "They know each other so it only makes sense that they do.", "correct": false},
+                {"options": "They are following the lead of the person at the front so they must follow and continue the greetings.", "correct": false},
+                {"options": "It is important to the culture, but a person has a choice whether they want to follow the custom, whether they know them or not.", "correct": false},
+                {"options": "It is important to the culture and shows respect, despite whether there is an established relationship or not.", "correct": true}
+            ]
+        },
+        {
+            "question": "In Ghana, what is seen to be disrepectful?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Talking to elders", "correct": false},
+                {"options": "Receiving items with your left hand", "correct": true},
+                {"options": "Going out all night", "correct": false},
+                {"options": "Being on the phone in public", "correct": false}
+            ]
+        },
+        {   
+            "question": "When in conversation with others, what should not be done?",
+            "answerSelections": [
+                {"options": "Insult someone then walk away", "correct": false},
+                {"options": "Be nice to those with authority, for example Chiefs or the President", "correct": false},
+                {"options": "Interject into another conversation with insults", "correct": true},
+                {"options": "Showing love and care to animals", "correct": false}
+            ]
+        },
+        {
+            "question": "Which of the following is encourged during interactions between Ghanaian elders and young people?",
+            // https://www.facebook.com/blackstarofafrica/photos/a.283218505619883/853413088600419/?type=3
+            "media": "/ghanaians_elders.jpg",
+            "answerSelections": [
+                {"options": "Being rude and disrespectful to the young", "correct": false},
+                {"options": "Elders should act respectful to young people and young people should reciprocate to elders", "correct": true},
+                {"options": "Elders should act respectful to young people", "correct": false},
+                {"options": "Only young people should be respectful to their elders", "correct": false}
+            ]
+        },
+        {
+            "question": "What behaviour(s) is commonly observed in Ghana?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Being nice to everyone you meet", "correct": false},
+                {"options": "Greeting everyone you meet", "correct": false},
+                {"options": "Asking someone if they feel sick or down", "correct": false},
+                {"options": "All of the above", "correct": true}
+            ]
+        },
+        {
+            "correct": " ",
+            "incorrect": " "
+        }
+    ],
+    usa_q: [
+        {
+            // https://codelibrary.amlegal.com/codes/texascity/latest/texascity_tx/0-0-0-4311
+            // https://malegislature.gov/Laws/GeneralLaws/PartIV/TitleI/Chapter270/Section14
+            "question": "In certain states, such as Texas and Massachusetts, is it illegal to spit on sidewalk(s)?",
+            "media": null,
+            "answerSelections": [
+                {"options": "True", "correct": true},
+                {"options": "False", "correct": false}
+            ]
+        },
+        {
+            "question":"What is happening in the video above and what should be done?",
+            "media": "<video src='/usa_talking.mp4' alt = 'People talking over each other' autoplay= 'true' ></video>",
+            "answerSelections": [
+                {"options": "Talking to each other. They have great listening skills and are responding to each other's claims.", "correct": false},
+                {"options": "Nothing. They are being respectful of and to each other!", "correct": false},
+                {"options": "Talking over each other and not listening. They should wait for the respective person to finish speaking.", "correct": true},
+                {"options": "They are intentionally ignoring each other. They should make eye contact, and conversate in a more appropriate manner.", "correct": false}
+            ]
+        },
+        {
+            "question": "When driving on the highway, which of the following could be viewed as an act of kindness?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Driving at the specified speed limit", "correct": false},
+                {"options": "Displaying competitive driving by accelerating and tailgating the car in front", "correct": false},
+                {"options": "Being on the phone and texting relatives", "correct": false},
+                {"options": "Changing lanes to provide room for those joining the highway", "correct": true}
+            ]
+        },
+        {
+            // https://www.theguardian.com/society/2023/nov/24/will-the-swedish-say-hi-campaign-work-in-london-we-put-it-to-the-test
+            "question": "In the US, it is the norm to greet and smile at people solely in public.",
+            "media": "<img src='/americans_greet.jpg' alt='Americans getting one another'>",
+            "answerSelections": [
+                {"options": "True", "correct": false},
+                {"options": "False", "correct": true}
+            ]
+        },
+        {
+            "question": "When out in public, you unintentionally stand too close to another person. What would be the best response in this situation?",
+            "media": null,
+            "answerSelections": [
+                {"options": "Continue to get closer, further invading their personal space.", "correct": false},
+                {"options": "Bump into the person and act as if it is their fault.", "correct": false},
+                {"options": "Apologise and/or say excuse me before giving the other person some room.", "correct": true},
+                {"options": "You haven't done anything wrong so you continue to mind your business", "correct": false}
+            ]
+        }
+    ]
+};

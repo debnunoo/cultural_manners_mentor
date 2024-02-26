@@ -2,9 +2,15 @@
 <head>
     <title> Welcome to <%= appName %> </title>
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <script src='/question.js' type='text/javascript'></script>
 </head>
 <body>
     
-
+    <div>
+        <% for(var i=0; i < uk_q.length; i++) { %>
+            <p><%= uk_q.question[i] %></p>
+            <input type="radio" id="option_1"><%= uk_q.answerSelections[i].options %></input>
+        <% } %>
+    </div>
 
 </body>

@@ -61,7 +61,7 @@ app.post('/loggedin', loginValid, function(req, res){
                     else if(result == true) {
                         console.log('Login has been successful');
                         req.session.userId = userId;
-                        res.redirect('/home');
+                        res.redirect('./home');
                     }
                     else {
                         res.send('Please <a href="/login">try again</a>');
@@ -331,5 +331,8 @@ app.get('/discussionForum/:post_title', function(req, res) {
     });
 });
 
+app.get('/uk', function(req, res) {
+    res.render('question_template.ejs', mannersData);
+});
 
 }
