@@ -412,7 +412,7 @@ module.exports = function(app, mannersData) {
 
         client.query(query, [post_title], (error, result) => {
             if(error) {
-                res.redirect('/discussionForum');
+                res.redirect('./discussionForum');
                 console.log(error);
             }
             else {
