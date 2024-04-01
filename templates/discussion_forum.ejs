@@ -8,16 +8,16 @@
 </head>
 <header>
     <!-- making the logo clickable -->
-    <a href="/home">
+    <a href="./home">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
     <!-- creating back button that takes users to the previous page -->
     <div class="back">
-        <a href="/home">
+        <a href="./home">
             <img src="/back.png" alt="back button" width="25px" height="25px">
-        </a>
+        </a> <img src="/uk_map.png"
     </div>
     <h1> Discussion Forum </h1>
     <!-- Brief description for discussion forum -->
@@ -36,7 +36,7 @@
                 <tr>
                     <!-- forum title -->
                     <!-- adding an a tag to allow the forum titles to be clickable to display more in-depth content -->
-                    <td id="post_title"><a href="/discussionForum/<%= forum.post_title %>"><%= forum.post_title %></a></td>
+                    <td id="post_title"><a href="./discussionForum/<%= forum.post_title %>"><%= forum.post_title %></a></td>
                     <!-- number of participants -->
                     <td id="num_participants"><%= forum.num_participants %></td> 
                     <!-- the latest date content was added to the forum -->

@@ -94,7 +94,7 @@ function displayScore() {
     show_score.innerHTML = score;
 
     if(score == 5) {
-        message.innerHTML = "<p><strong>Congratulations!</strong><br><br>Now that you know your stuff, what is one thing you didn't know before that you know now?</p><br> <p>Perhaps share your experience in the <a href='/discussionForum'>discussion forum</a></p>";
+        message.innerHTML = "<p><strong>Congratulations!</strong><br><br>Now that you know your stuff, what is one thing you didn't know before that you know now?</p><br> <p>Perhaps share your experience in the <a href='./discussionForum'>discussion forum</a></p>";
     }
     else if((score == 3 || score == 4) && url.href.includes('uk') 
     || (score == 3 || score == 4) && url.href.includes('usa') 

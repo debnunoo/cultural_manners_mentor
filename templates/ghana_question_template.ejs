@@ -22,11 +22,11 @@
             <p name="number" id="number"><strong>Q<%= ghana_questions.number %></strong></p>
             <!-- checking to see if the media property (within the arrays) are not null-->
             <!-- if not null and string includes a 'jpg', then insert as a picture -->
-            <% if(ghana_questions.media != null && ghana_questions.media.includes('jpg')) { %>
+            <% if(ghana_questions.media && ghana_questions.media.includes('jpg')) { %>
                 <img id="scenario_imgs" src="<%= ghana_questions.media %>">
                 <br>
             <!-- otherwise check if it includes a 'mp4', and insert as a video -->
-            <% } else if(ghana_questions.media != null && ghana_questions.media.includes('mp4')) { %>
+            <% } else if(ghana_questions.media && ghana_questions.media.includes('mp4')) { %>
                 <!-- https://www.w3schools.com/html/html5_video.asp -->
                 <!-- adding video controls such as play, pause and mute for users -->
                 <video controls>

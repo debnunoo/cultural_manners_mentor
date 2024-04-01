@@ -40,7 +40,7 @@ module.exports = function(app, mannersData) {
         if(!errors.isEmpty()) {
             console.error('Failed');
             // message to send if validation fails
-            res.send('Your details were not correct! Please <a href="/login">try again</a>!');
+            res.send('Your details were not correct! Please <a href="./login">try again</a>!');
         }
         else {
             // retrieving the users email from the form field
@@ -55,7 +55,7 @@ module.exports = function(app, mannersData) {
                 if(err) {
                     console.log(err.message);
                     // sending message to user if query fails
-                    res.send('Sorry your email was not recognised. Please register <a href="/register">here</a>');
+                    res.send('Sorry your email was not recognised. Please register <a href="./register">here</a>');
                 }
                 else {
                     console.log(result.rows);
@@ -69,7 +69,7 @@ module.exports = function(app, mannersData) {
                     bcrypt.compare(req.sanitize(req.body.password), hashedPass, function(err, result) {
                         if(err) {
                             // sending message to page if login fails 
-                            res.send("Sorry, your password doesn't seem to be correct! Please try again <a href='/login'>here</a> or reset your password <a href='/forgottenPassword>here</a>");
+                            res.send("Sorry, your password doesn't seem to be correct! Please try again <a href='./login'>here</a> or reset your password <a href='./forgottenPassword>here</a>");
                         }
                         else if(result == true) {
                             console.log('Login has been successful');
@@ -80,7 +80,7 @@ module.exports = function(app, mannersData) {
                         }
                         else {
                             // sending message if unexpected failure
-                            res.send('Please <a href="/login">try again</a>');
+                            res.send('Please <a href="./login">try again</a>');
                         }
                     });
                 }  
@@ -98,7 +98,7 @@ module.exports = function(app, mannersData) {
                 res.redirect('./');
             }
                 // sending message to user to indicate logging out has been successful
-                res.send('You have successfully logged out. Please return to <a href= "/">Home</a>');
+                res.send('You have successfully logged out. Please return to <a href= "./">Home</a>');
             });
     });
 
@@ -123,7 +123,7 @@ module.exports = function(app, mannersData) {
         if(!errors.isEmpty()) {
             console.error('Failed');
             // message to send if validation fails
-            res.send('Sorry, there was an issue. Please re-enter your details Please <a href="/register">here!</a>!');
+            res.send('Sorry, there was an issue. Please re-enter your details Please <a href="./register">here!</a>!');
         }
         else {
             // retrieving the users entered password
@@ -158,12 +158,12 @@ module.exports = function(app, mannersData) {
                         if(err) {
                             console.log(err.message);
                             // message if details could not be inputted
-                            res.send('Sorry, there was an issue. Please re-enter your details Please <a href="/register">here!</a>!');
+                            res.send('Sorry, there was an issue. Please re-enter your details Please <a href="./register">here!</a>!');
                         }
                         else {
                             console.log('Registration successful!');
                             // message if registration is successful
-                            res.send('Thank you for registering to Cultural Manners Mentor. Please now <a href="/login">sign in</a>.')
+                            res.send('Thank you for registering to Cultural Manners Mentor. Please now <a href="./login">sign in</a>.')
                         }
                     });
                 });
@@ -197,7 +197,7 @@ module.exports = function(app, mannersData) {
         if(!errors.isEmpty()) {
             console.error('Failed', errors.array());
             // message to send if validation fails
-            res.send('Please <a href="/forgottenPassword">try again</a>!');
+            res.send('Please <a href="./forgottenPassword">try again</a>!');
         }
         else {
             // running query to select users details from the database based off the entered email address
@@ -209,12 +209,12 @@ module.exports = function(app, mannersData) {
                 if(error) {
                     console.log(error);
                     // message to send if query fails - email is not found within the database
-                    res.send('Please enter your email address correctly. Please try again <a href="/forgottenPassword">here.</a>');
+                    res.send('Please enter your email address correctly. Please try again <a href="./forgottenPassword">here.</a>');
                 }
                 else {
                     // using !== to compare the values of the inputted email (within the html form) and the email stored within the database
                     if(user_email !== result.rows[0].email) {
-                        res.send(`There is no existing account associated with ${user_email}. Please <a href="/forgottenPassword">try again</a> or <a href="/register">create an account.</a>`);
+                        res.send(`There is no existing account associated with ${user_email}. Please <a href="./forgottenPassword">try again</a> or <a href="./register">create an account.</a>`);
                     }
                     else {
                         // continuing with the requests if user exists
@@ -250,12 +250,12 @@ module.exports = function(app, mannersData) {
                                     if(error) {
                                         console.log(error.message);
                                         // message if details could not be updated
-                                        res.send('Failed to update password. Please <a href="/forgottenPassword">try again.</a>');
+                                        res.send('Failed to update password. Please <a href="./forgottenPassword">try again.</a>');
                                     }
                                     else {
                                         console.log('Registration successful!');
                                         // message if password reset was successful
-                                        res.send('Your password has successfully been updated! Please login <a href="/login">here</a>.');
+                                        res.send('Your password has successfully been updated! Please login <a href="./login">here</a>.');
                                     }
                                 });
                             });
@@ -279,7 +279,7 @@ module.exports = function(app, mannersData) {
 
         client.query(query, [loggedUser], (error, result) => {
             if(error) {
-                res.send('Sorry, please try logging in <a href="/login">again</a>.');
+                res.send('Sorry, please try logging in <a href="./login">again</a>.');
             }
             else {
                 // assigning the results from the query to the variable availableUsers
@@ -341,11 +341,11 @@ module.exports = function(app, mannersData) {
             if(error) {
                 console.log(error);
                 // message to send if forum could not added
-                res.send('Sorry, your forum could not be added! Please try again <a href="/addNewPost">here</a>.');
+                res.send('Sorry, your forum could not be added! Please try again <a href="./addNewPost">here</a>.');
             }
             else {
                 // message if forum addition is successful
-                res.send('Your forum has been added successfully! You can the forums <a href="/discussionForum">here</a>');
+                res.send('Your forum has been added successfully! You can the forums <a href="./discussionForum">here</a>');
             }
 
         });  
@@ -389,12 +389,12 @@ module.exports = function(app, mannersData) {
         client.query(query, newrecord, (error, result) => {
             if(error) {
                 // message to send if post could not added
-                res.send('Sorry, your post could not be added! Please try again <a href="/addNewPost">here</a>.');
+                res.send('Sorry, your post could not be added! Please try again <a href="./addNewPost">here</a>.');
                 console.log(error);
             }
             else {
                 // message if post addition is successful
-                res.send('Your post has been added successfully! Please click <a href="/discussionForum">here</a>');
+                res.send('Your post has been added successfully! Please click <a href="./discussionForum">here</a>');
             }
         });
     })
@@ -479,7 +479,7 @@ module.exports = function(app, mannersData) {
 
         client.query(query, [loggedUser], (error, result) => {
             if(error) {
-                res.send('Sorry, there was an unexpected error. Please try <a href="/ghana/questions">again</a>.');
+                res.send('Sorry, there was an unexpected error. Please try <a href="./ghana/questions">again</a>.');
             }
             else {
                 // assigning the results from the query to the variable usersName
@@ -503,7 +503,7 @@ module.exports = function(app, mannersData) {
 
         client.query(query, [loggedUser], (error, result) => {
             if(error) {
-                res.send('Sorry, there was an unexpected error. Please try <a href="/ghana/questions">again</a>.');
+                res.send('Sorry, there was an unexpected error. Please try <a href="./uk/questions">again</a>.');
             }
             else {
                 // assigning the results from the query to the variable usersName
@@ -526,7 +526,7 @@ module.exports = function(app, mannersData) {
 
         client.query(query, [loggedUser], (error, result) => {
             if(error) {
-                res.send('Sorry, there was an unexpected error. Please try <a href="/ghana/questions">again</a>.');
+                res.send('Sorry, there was an unexpected error. Please try <a href="./usa/questions">again</a>.');
             }
             else {
                 // assigning the results from the query to the variable usersName

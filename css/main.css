@@ -64,13 +64,13 @@ label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
-[href="/forgottenPassword"] {
+[href="./forgottenPassword"] {
     color: grey;
     text-decoration: none;
     font-size: small;
     font-family: monospace;
 }
-[href="/forgottenPassword"]:hover {
+[href="./forgottenPassword"]:hover {
     text-decoration: underline;
 }
 input[type=submit] {
@@ -119,12 +119,12 @@ button:hover {
    
 }
 
-[href="/login"] {
+[href="./login"] {
     color: black;
     font-size: 25px;
 }
 
-[href="/login"]:hover {
+[href="./login"]:hover {
     color: red;
     text-decoration: none;
 }
@@ -138,12 +138,12 @@ button:hover {
     width: 30%;
 }
 
-[href="/register"] {
+[href="./register"] {
     color: black;
     font-size: 25px;
 }
 
-[href="/register"]:hover {
+[href="./register"]:hover {
     color: red;
     text-decoration: none;
 }
@@ -198,7 +198,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-[href="/logout"] {
+[href="./logout"] {
     color: black;
     margin-top: 800px;
     margin-left: 800px;
@@ -207,7 +207,7 @@ input[type="submit"] {
     font-family: sans-serif;
 }
 
-[href="/logout"]:hover {
+[href="./logout"]:hover {
     color: red;
     text-decoration: underline;
 }
