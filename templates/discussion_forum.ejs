@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <head>
-    <title> Welcome to <%= appName %> </title>
+    <title> Discussion Forum </title>
+    <!-- reading in css file -->
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header>
+    <!-- making the logo clickable -->
     <a href="/home">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
+    <!-- creating back button that takes users to the previous page -->
     <div class="back">
         <a href="/home">
             <img src="/back.png" alt="back button" width="25px" height="25px">
@@ -17,32 +22,32 @@
     <h1> Discussion Forum </h1>
     <!-- Brief description for discussion forum -->
     <h4>This forum is a place to discuss all things mannerisms - whether that be manners observed in different cultures, those seen day-to-day or simply asking a question. Please feel free to interact, view posts and add your own!</h4>
-    <label>Filter by:</label>
-    <!-- <select id="options_filter">
-        <option value="post_ascending">Post Name Ascending</option>
-        <option value="post_descending">Post Name Descending</option>
-        <option value="recent_post">Most Recent Post</option>
-        <option value="participant_vol">Number of Participants</option>
-    </select> -->
-
+    <!-- creating a table to display existing forums -->
     <table>
         <tr>
+            <!-- displaying 3 headers -->
             <th>Post Name</th>
             <th>Number of Participants</th>
             <th>Last Modified</th>
         </tr>
         <tbody id="forum_rows">
+            <!-- iterating over the different 3 fields to display as rows -->
             <% forumPosts.forEach(function(forum) { %>
                 <tr>
+                    <!-- forum title -->
+                    <!-- adding an a tag to allow the forum titles to be clickable to display more in-depth content -->
                     <td id="post_title"><a href="/discussionForum/<%= forum.post_title %>"><%= forum.post_title %></a></td>
-                    <td id="num_participants"><%= forum.num_participants %></td>
-                    <td id="latest_date"><%= forum.latest_date %></td>
+                    <!-- number of participants -->
+                    <td id="num_participants"><%= forum.num_participants %></td> 
+                    <!-- the latest date content was added to the forum -->
+                    <td id="latest_date"><%= forum.latest_date_string %></td>
                 </tr>
             <% }) %>
         </tbody>
     </table>
     <br>
+    <!-- button to allow users to create their own forum -->
     <!-- ref -->
-    <button type="button" onclick="window.location.href = 'addNewPost'">+ Create New</button>
+    <button type="button" onclick="window.location.href = 'addNewForum'" id="add_from_forum">+ Create New</button>
 </body>
 </html>

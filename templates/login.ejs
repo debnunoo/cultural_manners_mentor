@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <head>
-    <title> Welcome to <%= appName %> </title>
+    <title> Login onto <%= appName %> </title>
+    <!-- reading in css file -->
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- reading in javascript file in order to access functions -->
     <script src='/password.js' type='text/javascript'></script>
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header>
+    <!-- making the logo clickable -->
     <a href="./">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
+    <!-- creating back button that takes users to the previous page -->
     <div class="back">
         <a href="./">
             <img src="/back.png" alt="back button" width="25px" height="25px">
         </a>
     </div>
     <h1 id="login"> Login </h1>
+    <!-- creating a form to allow users to log onto the web application -->
     <form method="post" action="/loggedin">
+        <!-- users have to input their email address -->
         <label>Email address: <input id="email" type="email" name="email" placeholder="eg. jane.doe@email.com"></label>
         <br>
         <br>
+        <!-- users have to input their password -->
         <label>Password: <input id="password" type="password" name="password"></label>
-        <!-- <div class="pass_log"> -->
-            <input type="checkbox" id="pass_check" onclick= "passVisibility()">
-        <!-- </div> -->
+        <!-- checkbox to allow users to view their passwords as plaintext -->
+        <input type="checkbox" id="pass_check" onclick= "passVisibility()">
         <br>
+        <!-- link if users have forgotten their password  -->
         <a href="/forgottenPassword">Forgotten Password?</a>
         <br>
         <br>
+        <!-- button to click to log onto the web application -->
         <input type="submit" value="Login">
     </form>
 </body>

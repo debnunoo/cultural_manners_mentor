@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <!-- reading in css file -->
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- reading in javascript file in order to access functions -->
+    <script src='/cultural_learning.js' type='text/javascript'></script>
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- creating back button that takes users to the previous page -->
+    <div class="back_qs">
+        <a href="javascript:history.back()">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+        <p>Return to previous page</p>
+    </div>
+    <div class="learning">
+        <!-- Looping through the array of questions -->
+        <% usa.forEach(function(usa_questions) { %>
+            <!-- getting and printing each question -->
+            <p name="number" id="number"><strong>Q<%= usa_questions.number %></strong></p>
+            <!-- checking to see if the media property (within the arrays) are not null-->
+            <!-- if not null and string includes a 'jpg', then insert as a picture -->
+            <% if(usa_questions.media != null && usa_questions.media.includes('jpg')) { %>
+                <img id="scenario_imgs" src="<%= usa_questions.media %>">
+                <br>
+            <!-- otherwise check if it includes a 'mp4', and insert as a video -->
+            <% } else if(usa_questions.media != null && usa_questions.media.includes('mp4')) { %>
+                <!-- https://www.w3schools.com/html/html5_video.asp -->
+                <!-- adding video controls such as play, pause and mute for users -->
+                <video controls>
+                    <source id="scenario_vids" src="<%= usa_questions.media %>" type="video/mp4">
+                </video>
+                <br>
+            <% } %>
+            <!-- printing out the individual questions -->
+            <p id="questions"><%= usa_questions.question %></p>
+            <!-- Looping through the property of answerSelections (due to there being a variety of options per question) -->
+            <% usa_questions.answerSelections.forEach(function(question_options) { %>
+                <!-- printing out each question option as a button -->
+                <input type="button" class="question_options" name="question_options" value="<%= question_options.options %>" onclick="checkAnswer('<%= usa_questions.number %>', '<%= question_options.correct %>', '<%= question_options.options %>')">
+                <div class="checking_answer" id="check_answer_<%= usa_questions.number %>"></div>
+            <% }) %>
+            
+            <!--  showing a 'Submit Answers' button after question 5 -->
+            <!-- parsing the question numbers as a int as it's stored as a string currently -->
+            <% if(parseInt(usa_questions.number) == 5) { %>
+                <!-- calling the questionCheck function createf within cultural_learning.js -->
+                <button id="finish_questions" type="button" onclick="questionCheck()">Submit Answers</button>
+            <% } %> 
+        <% }) %>
+    </div>
+</body>
+</html>

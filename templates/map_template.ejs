@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <!-- reading in css file -->
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header>
+    <!-- making the logo clickable -->
+    <a href="/home">
+        <img src="/manners_logo.png" alt="Web Application Logo">
+    </a>
+</header>
+<body>
+    <!-- creating back button that takes users to the previous page -->
+    <div class="back">
+        <a href="/home">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+    </div>
+
+    
+    <h2 id="pick_question"> Test your knowledge </h2>
+    <div id="country_map"></div> 
+    <div id="start_qs"></div>
+
+
+<script>
+    // function that automatically loads the appropriate maps depending on the url selected
+    window.addEventListener("DOMContentLoaded", function() {
+        var currentURL = window.location.href; // retrieving the url of the current page (How To Get The Current URL With JavaScript, n.d)
+        var url = new URL(currentURL); // returning a newly created URL
+        var addMap = document.getElementById('country_map'); // retrieving the id of the div where the maps would go
+
+        // conditional statements to check the different urls
+        // href returns the url as a string, allowing the conditional statements to run (msbit et al., 2023)
+        // using innerHTML to update the div with the appropriate maps depending on the url
+
+        // if the url includes uk, then a uk map would be included
+        if(url.href.includes('uk')) {
+            // 
+            addMap.innerHTML = '<div class="map_template"><img id="uk_map" src="/uk_map.png"><button id="start_uk" type="button"><a href="/uk/questions">Start Questions</a></button> </div>';
+        }
+        // if the url includes uk, then a ghana map would be included
+        else if(url.href.includes('ghana')) {
+            // Figure from Ababio, Adi and Commey (2013, p.132)
+            addMap.innerHTML = '<div class="map_template"><img id="ghana_map" src="/ghana_map.jpg"><button id="start_ghana" type="button"><a href="/ghana/questions">Start Questions</a></button> </div>';
+        }
+        // if the url includes uk, then a usa map would be included
+        else if(url.href.includes('usa')) {
+            // Taken from USA Colored Map with State Names (n.d)
+            addMap.innerHTML = '<div class="map_template"><img id="usa_map" src="/usa_map.jpg"><button id="start_usa" type="button"><a href="/usa/questions">Start Questions</a></button> </div>';
+        }
+    });
+</script>
+</body>
+</html>

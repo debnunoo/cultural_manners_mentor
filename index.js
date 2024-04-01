@@ -1,17 +1,16 @@
-var express = require('express');
-var ejs = require('ejs');
-var bodyParser = require('body-parser');
-// var fileSystem = require('fs');
-// var mongoose = require('mongoose');
-var { Client } = require('pg');
-var session = require('express-session');
-var dotenv = require('dotenv').config({path: 'credentials.env'});
-var validator = require('express-validator');
+// importing required node dependencies (libraries)
+var express = require('express'); // express.js
+var ejs = require('ejs'); // ejs
+var bodyParser = require('body-parser'); // body-parser to process incoming requests
+var { Client } = require('pg'); // postgresql
+var session = require('express-session'); // express-session to generate sessions for users
+var dotenv = require('dotenv').config({path: 'credentials.env'}); // to hide personal credentials
+var validator = require('express-validator'); // 
 var sanitizer = require('express-sanitizer');
-const { MongoClient } = require('mongodb');
 
+// initialising express
 const app = express()
-const port = 8000
+const port = 8000 // setting the port that will be listened to by the app
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(sanitizer());
 app.use(session({
@@ -23,26 +22,16 @@ app.use(session({
     }
 }));
 
-app.use(express.static(__dirname + '/css'));
-app.use(express.static(__dirname + '/assets'));
-app.use(express.static(__dirname + '/unit_test'));
-app.use(express.json());
+// setting the path to the file directories
+app.use(express.static(__dirname + '/css')); // to read css file
+app.use(express.static(__dirname + '/assets')); // to read the different media (pictures and images) within the folder
+app.use(express.static(__dirname + '/unit_test')); // to conduct testing within the code
 
-app.set('views', __dirname + '/templates');
-app.set('view engine', 'ejs');
-app.engine('html', ejs.renderFile)
+app.set('views', __dirname + '/templates'); // setting the templates folders to render web pages
+app.set('view engine', 'ejs'); // rendering web pages using ejs
+app.engine('html', ejs.renderFile); // mapping ejs files to html files
 
-
-// https://www.mongodb.com/docs/atlas/tutorial/connect-to-your-cluster/
-const uri = process.env.mongo_uri;
-const mongoClient = new Client(uri);
-
-mongoClient.connect((err) => {
-    console.log('Mongodb database has successfully connected!');
-})
-
-
-// https://node-postgres.com/
+// creating a new client, and entering connection details
 const client = new Client ({
     user: process.env.db_user,
     host: 'localhost',
@@ -51,7 +40,7 @@ const client = new Client ({
     port: process.env.port
 });
 
-// https://node-postgres.com/apis/client
+// connecting to the client
 client.connect((err) => {
     if(err) {
         console.log('Database connection failed.', err.stack)
@@ -61,12 +50,14 @@ client.connect((err) => {
     }
 })
 
-// declaring the database objects as global in order to access within main.js
+// declaring the database object as global in order to access within main.js
 global.client = client;
-global.mongoClient = mongoClient;
 
+// creating a variable with the app name
 var mannersData = {appName: "Cultural Manners Mentor"}
 
+// getting the main.js file
 require("./routes/main")(app, mannersData);
 
+// listening for visitors on the specified port and current web address
 app.listen(port, () => console.log(`Manners app listening on port ${port}`))

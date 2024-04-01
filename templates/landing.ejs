@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <head>
-    <title> Welcome to <%= appName %> </title>
+    <title> <%= appName %> </title>
+    <!-- reading in css file -->
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header>
+    <!-- displaying logo -->
     <img src="/manners_logo.png" alt="Web Application Logo">
 </header>
 <body>
+    <div id="consent-box">
+        <h3>Welcome to <%= appName %>!</h3> 
+        <p><%= appName %> uses cookies to ensure that the platform functions as smoothly as possible and provides personalised content. 
+            By continuing to use <%= appName %>, you consent to the use of cookies. </p>
+        <button id="close-consent">Close</button>
+    </div>
+
+    <!-- active button links -->
+    <!-- link to take users to the login page -->
     <button class="login">
         <a href="/login">Login</a>
     </button>
+    <!-- link to take users to the registration page -->
     <button class="register"> 
         <a href="/register">Register</a>
     </button>
 </body>
+<script>
+    var consent_box = document.getElementById('consent-box');
+    var close_dialog = document.getElementById('close-consent');
+
+// https://www.geeksforgeeks.org/how-to-create-cookie-consent-box-using-html-css-and-javascript/
+    close_dialog.onclick = function() {
+        consent_box.classList.add("hide"); 
+    };
+
+</script>
 </html>
 

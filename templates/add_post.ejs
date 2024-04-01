@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title> Add a New Post </title>
+    <!-- reading in css file -->
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header>
+    <!-- making the logo clickable -->
+    <a href="/home">
+        <img src="/manners_logo.png" alt="Web Application Logo">
+    </a>
+</header>
+<body>
+    <!-- creating back button that takes users to the previous page -->
+    <div class="back">
+        <a href="javascript:history.back()">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+    </div>
+    <h1>Add New Post</h1>
+    <!-- creating a form where users are able to input a title and content to add to an existing forum -->
+    <form method="post" action="/postSubmitted">
+        <label>Existing Forums:</label>
+        <!-- displaying the existing forum titles already created on the web application -->
+        <select name="existing_forums" id = "dropdown">
+            <!-- for loop to iterate over the different forum titles -->
+            <% forumTitles.forEach(function(title) { %>
+                <!-- dropdown options -->
+                <option value="<%= title.post_title %>" id="dropdown_options"> <%= title.post_title %> </option>
+            <% }) %>
+        </select>
+        <br>
+        <br>
+        <!-- Users are able to write content -->
+        <label>Content:</label>
+        <br>
+        <textarea id="review" name="review" required></textarea>
+        <br>
+        <!-- button to click to add post -->
+        <input type="submit" value="Post">
+    </form>
+    <script>
+        // function that automatically selects the forum title users would like to add input for
+        window.addEventListener("DOMContentLoaded", function() {
+            var previousURL = document.referrer; // retrieving the url from the previous webpage (HTML DOM document referrer, n.d)
+            var url = new URL(previousURL); // returning a newly created URL 
+            var content = url.pathname.split('/'); // splitting the url into sections based on '/' to the individual sections of the url (Rumyra et al., 2024)
+            var gettingTitle = content[2]; // retrieving the 3rd element of the URL (part that contains the post title after split)
+            console.log(gettingTitle);
+
+            // conditional statement to check if the url contains '%20'
+            if(gettingTitle.includes('%20')) {
+                // if variable does contain '%20', then replace with a space
+                // using regex expresseion to find characters that match '%20' 
+                gettingTitle = gettingTitle.replace(/%20/g, ' ');
+            }
+            else {
+                // if not, add a message to the console
+                console.log('No %20 present');
+            }
+
+            // retrieving the id from the select tag
+            var autoselectDropdown = document.getElementById('dropdown');
+            
+            // changing the value of the dropdown to the post title (from the variable)
+            // this automatically fills in the dropdown based on the forum selected (in previous url)
+            autoselectDropdown.value = gettingTitle;
+        });
+    </script>
+</body>
+</html>

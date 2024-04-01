@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <head>
-    <title> Welcome to <%= appName %> </title>
+    <title> <%= post_title %> </title>
+    <!-- reading in css file -->
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header>
+    <!-- making the logo clickable -->
     <a href="/home">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
+    <!-- creating back button that takes users to the previous page -->
     <div class="back">
         <a href="/discussionForum">
             <img src="/back.png" alt="back button" width="25px" height="25px">
         </a>
     </div>
+    <!-- displaying the forum title (that has been clicked from discussion_forum.ejs) as the header -->
+    <h1 id="post_title"><%= post_title %> </h1>
+    <!-- creating a table to display content for specific individual forums -->
+    <table id="individual_forum">
+        <tr>
+            <!-- displaying the different users that have added input to the forum -->
+            <!-- using their username -->
+            <th>Username</th>
+            <!-- displaying the date the post was added to the forum -->
+            <th>Date</th>
+            <!-- displaying the content users inputted -->
+            <th>Content</th>
+        </tr>
+    <!-- iterating over the different 3 fields to display as rows -->
     <% individualPosts.forEach(function(posts) { %>
-        <h1><%= posts.post_title %> </h1>
-        <table id="individual_forum">
-            <tr>
-                <th>Username</th>
-                <th>Date</th>
-                <th>Content</th>
-            </tr>
-            <tr>
-                <td><%= posts.username %></a></td>
-                <td><%= posts.post_date %></td>
-                <td><%= posts.post_content %></td>
-            </tr>
-            <% }) %>
-        </table>
+        <tr>
+            <td><%= posts.username %></a></td>
+            <td><%= posts.post_date %></td>
+            <td><%= posts.post_content %></td>
+        </tr>
+    <% }) %>
+    </table>
+    <br>
+    <!-- button to allow users to add to that specific individual forum -->
     <!-- ref -->
     <button type="button" onclick="window.location.href = 'addNewPost'" id="add_from_individual">+ Add post</button>
 </body>

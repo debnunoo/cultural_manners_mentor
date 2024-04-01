@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <!-- reading in css file -->
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- reading in javascript file in order to access functions -->
+    <script src='/cultural_learning.js' type='text/javascript'></script>
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- creating back button that takes users to the previous page -->
+    <div class="back_qs">
+        <a href="javascript:history.back()">
+            <img src="/back.png" alt="back button" width="25px" height="25px">
+        </a>
+        <p>Return to previous page</p>
+    </div>
+    <div class="learning">
+        <!-- Looping through the array of questions -->
+        <% ghana.forEach(function(ghana_questions) { %>
+             <!-- getting and printing each question -->
+            <p name="number" id="number"><strong>Q<%= ghana_questions.number %></strong></p>
+            <!-- checking to see if the media property (within the arrays) are not null-->
+            <!-- if not null and string includes a 'jpg', then insert as a picture -->
+            <% if(ghana_questions.media != null && ghana_questions.media.includes('jpg')) { %>
+                <img id="scenario_imgs" src="<%= ghana_questions.media %>">
+                <br>
+            <!-- otherwise check if it includes a 'mp4', and insert as a video -->
+            <% } else if(ghana_questions.media != null && ghana_questions.media.includes('mp4')) { %>
+                <!-- https://www.w3schools.com/html/html5_video.asp -->
+                <!-- adding video controls such as play, pause and mute for users -->
+                <video controls>
+                    <source id="scenario_vids" src="<%= ghana_questions.media %>" type="video/mp4">
+                </video>
+                <br>
+            <% } %>
+            <!-- printing out the individual questions -->
+            <p id="questions"><%= ghana_questions.question %></p>
+            <!-- Looping through the property of answerSelections (due to there being a variety of options per question) -->
+            <% ghana_questions.answerSelections.forEach(function(question_options) { %>
+                <div class="individual_qs">
+                        <!-- printing out each question option as a button -->
+                        <input type="button" class="question_options" name="question_options" value="<%= question_options.options %>" onclick="checkAnswer('<%= ghana_questions.number %>', '<%= question_options.correct %>', '<%= question_options.options %>')">
+                        <!-- breaking each option onto a new line -->
+                        <div class="checking_answer" id="check_answer_<%= ghana_questions.number %>"></div>  
+                        <!-- <div class="answer_imgs"><img id="correct_answer" src="/tick.png" style="display: none;"></div>
+                        <div class="answer_imgs"><img id="wrong_answer" src="/cross.png" style="display: none;"></div> -->
+
+                </div>             
+            <% }) %>
+        <% }) %>
+    </div>
+    <!-- calling the questionCheck function createf within cultural_learning.js -->
+    <button id="finish_questions" type="button" onclick="questionCheck()">Submit Answers</button>
+</body>
+</html>

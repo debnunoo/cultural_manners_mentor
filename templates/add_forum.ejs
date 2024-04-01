@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <head>
-    <title> Welcome to <%= appName %> </title>
+    <title> Add a New Forum </title>
+    <!-- reading in css file -->
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- reading in javascript file in order to access functions -->
     <script src='/forum.js' type='text/javascript'></script>
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header>
+    <!-- making the logo clickable -->
     <a href="/home">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
+    <!-- creating back button that takes users to the previous page -->
     <div class="back">
         <a href="/discussionForum">
             <img src="/back.png" alt="back button" width="25px" height="25px">
         </a>
     </div>
-    <h1>Add New Post</h1>
-    <form method="post" action="/postSubmitted">
+    <h1>Add New Forum</h1>
+    <!-- creating a form where users are able to input a title and content to create a new forum -->
+    <form method="post" action="/forumAdded">
+        <!-- Users are able to create a new title -->
         <label>Title:</label>
-            <input type="text" id="newTitle" placeholder="Enter a forum name"  name="title_input">
-            <!-- <select id="add_post" onchange="addPostTitle();" name = "titleOfPosts">
-                <option disabled selected value>Choose Post</option>
-                <%/* forumTitles.forEach(function(title) { %>
-                    <option id="existing_title" value="<%= title.post_id %>"><%= title.post_title %></option>
-                <% })*/ %>
-                <option id="new_title" value="new_title">Add your own</option>
-            </select>
-        
-        <input type="text" id="newTitle" placeholder="Start a new forum" style="display: none;" name="title_input">   -->
+        <input type="text" id="newTitle" placeholder="Enter a forum name"  name="title_input">
         <br>
         <br>
+        <!-- Users are able to write content -->
         <label>Content:</label>
         <br>
         <textarea id="review" name="review" required></textarea>
         <br>
-        <input type="submit" value="Post">
+        <!-- button to click to add post -->
+        <input type="submit" value="Add">
     </form>
 </body>
 </html>

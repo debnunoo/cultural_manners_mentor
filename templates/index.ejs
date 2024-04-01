@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <head>
     <title> Welcome to <%= appName %> </title>
+    <!-- reading in css file -->
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- enabling responsive design of the web application -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header>
+    <!-- displaying logo -->
     <img src="/manners_logo.png" alt="Web Application Logo">
 </header>
 <body>
-    <h1> Welcome to <%= appName %></h1>
-    <div id="coming_soon">
-        <div id="overlay">Coming Soon!</div>
-      </div>
+    <!-- displaying welcome message for users -->
+    <!-- iterating over the user field (retrieved from the database) to display on page -->
+    <% availableUsers.forEach(function(user) { %>
+        <!-- displaying users first name solely -->
+        <h1 id="welcome_message"> Welcome <%= user.first_name %>!</h1>
+    <% }) %>
+    <!-- active button links for the individual cultures -->
     <button class="uk">
-        <a href="/UK">UK</a>
+        <a href="/uk">UK</a>
     </button>
     <br>
     <button class="usa">
-        <a href="/USA">USA</a>
+        <a href="/usa">USA</a>
     </button>
     <br>
     <button class="ghana">
-        <a href="/Ghana">Ghana</a>
+        <a href="/ghana">Ghana</a>
     </button>
     <br>
     <br>
     <br>
+    <!-- link to take users to the discussion forum -->
     <a class="disforumlink" href="/discussionForum">Discussion Forum</a>   
     <br>    
+    <!-- link to log off the web application -->
     <a href="/logout">Logout</a>
 
 </body>
-
 </html>
