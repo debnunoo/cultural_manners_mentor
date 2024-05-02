@@ -11,10 +11,13 @@
     <img src="/manners_logo.png" alt="Web Application Logo">
 </header>
 <body>
+    <!-- adapted from the_ravisingh (2023)  -->
     <div id="consent-box">
+        <!-- message displayed to users to inform of cookie usage -->
         <h3>Welcome to <%= appName %>!</h3> 
         <p><%= appName %> uses cookies to ensure that the platform functions as smoothly as possible and provides personalised content. 
             By continuing to use <%= appName %>, you consent to the use of cookies. </p>
+        <!-- button to close consent box -->
         <button id="close-consent">Close</button>
     </div>
 
@@ -29,10 +32,13 @@
     </button>
 </body>
 <script>
-    var consent_box = document.getElementById('consent-box');
+    // adapted from the_ravisingh (2023) 
+    // retrieving div that holds consent information
+    var consent_box = document.getElementById('consent-box'); 
+    // getting close button
     var close_dialog = document.getElementById('close-consent');
 
-// https://www.geeksforgeeks.org/how-to-create-cookie-consent-box-using-html-css-and-javascript/
+    // if user clicks the close button, hide element is added
     close_dialog.onclick = function() {
         consent_box.classList.add("hide"); 
     };

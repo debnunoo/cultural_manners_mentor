@@ -10,14 +10,14 @@
 </head>
 <header>
     <!-- making the logo clickable -->
-    <a href="./home">
+    <a href="/home">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
     <!-- creating back button that takes users to the previous page -->
     <div class="back">
-        <a href="./discussionForum">
+        <a href="/discussionForum">
             <img src="/back.png" alt="back button" width="25px" height="25px">
         </a>
     </div>
@@ -26,12 +26,14 @@
     <form method="post" action="/forumAdded">
         <!-- Users are able to create a new title -->
         <label>Title:</label>
+        <!-- box for users to enter a title -->
         <input type="text" id="newTitle" placeholder="Enter a forum name"  name="title_input">
         <br>
         <br>
         <!-- Users are able to write content -->
         <label>Content:</label>
         <br>
+        <!-- box for users to enter content -->
         <textarea id="review" name="review" required></textarea>
         <br>
         <!-- button to click to add post -->

@@ -27,7 +27,6 @@
                 <br>
             <!-- otherwise check if it includes a 'mp4', and insert as a video -->
             <% } else if(usa_questions.media != null && usa_questions.media.includes('mp4')) { %>
-                <!-- https://www.w3schools.com/html/html5_video.asp -->
                 <!-- adding video controls such as play, pause and mute for users -->
                 <video controls>
                     <source id="scenario_vids" src="<%= usa_questions.media %>" type="video/mp4">

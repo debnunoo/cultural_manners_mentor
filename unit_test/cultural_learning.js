@@ -27,6 +27,7 @@ function checkAnswer(questionNumber, answerCorrect, selectedAnswer) {
     else if(selectedAnswer && answerCorrect === 'false') {
         // if not, add a message to the console
         console.log('Answer was not correct');
+        // taken from hqrloveq (n.d) 
         answer_check.innerHTML = '<div class="answer_imgs"><img id="wrong_answer" src="/cross.png"></div>';
 
     }
@@ -93,18 +94,18 @@ function displayScore() {
     // appending the score to the web page based off the local variable
     show_score.innerHTML = score;
 
+    // messages to display depending on aggregrated score
     if(score == 5) {
-        message.innerHTML = "<p><strong>Congratulations!</strong><br><br>Now that you know your stuff, what is one thing you didn't know before that you know now?</p><br> <p>Perhaps share your experience in the <a href='./discussionForum'>discussion forum</a></p>";
+        message.innerHTML = `<p><strong>Congratulations!</strong><br><br>Now that you know your stuff, what is one thing you didn't know before that you know now?</p><br> 
+                             <p>Perhaps share your experience in the <a href='./discussionForum'>discussion forum</a></p>`;
     }
-    else if((score == 3 || score == 4) && url.href.includes('uk') 
-    || (score == 3 || score == 4) && url.href.includes('usa') 
-    || (score == 3 || score == 4) && url.href.includes('ghana')) {
-        message.innerHTML = "<p>You are so nearly there!<br><br> Perhaps with a bit more practice you will get full marks! Maybe looking into additional resources could help.</p>";
+    else if(score == 3 || score == 4) {
+        message.innerHTML = `<p>You are so nearly there!<br><br> Perhaps with a bit more practice you will get full marks! 
+                                Maybe looking into additional resources could help.</p>`;
     }
-    else if((score == 0 || score == 1 || score == 2) && url.href.includes('uk')
-    || (score == 0 || score == 1 || score == 2) && url.href.includes('usa')
-    || (score == 0 || score == 1 || score == 2) && url.href.includes('ghana')) {
-        message.innerHTML = "<p> You are off to a good start, but there is room for improvement. Maybe try looking into the additional resources and give it another attempt!</p>";
+    else if(score == 0 || score == 1 || score == 2) {
+        message.innerHTML = `<p> You are off to a good start, but there is room for improvement. 
+                                Maybe try looking into the additional resources and give it another attempt!</p>`;
     }
 
 };

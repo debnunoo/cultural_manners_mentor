@@ -8,12 +8,7 @@
     "express-sanitizer": "^1.0.6",
     "express-session": "^1.18.0",
     "express-validator": "^7.0.1",
-    "mongodb": "^6.3.0",
-    "mongoose": "^8.1.1",
     "pg": "^8.11.3",
-    "php": "^1.0.2",
-    "php-express": "^0.0.3",
-    "php-node": "^0.0.2",
     "request": "^2.88.2"
   }
 }

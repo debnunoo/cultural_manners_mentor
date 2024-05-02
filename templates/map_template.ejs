@@ -7,21 +7,22 @@
 </head>
 <header>
     <!-- making the logo clickable -->
-    <a href="./home">
+    <a href="/home">
         <img src="/manners_logo.png" alt="Web Application Logo">
     </a>
 </header>
 <body>
     <!-- creating back button that takes users to the previous page -->
     <div class="back">
-        <a href="./home">
+        <a href="/home">
             <img src="/back.png" alt="back button" width="25px" height="25px">
         </a>
     </div>
-
-    
+    <!-- providing context for page -->
     <h2 id="pick_question"> Test your knowledge </h2>
+    <!-- area to display map, depending on culture picked -->
     <div id="country_map"></div> 
+    <!-- button to direct users to questions if clicked, depending on culture selected -->
     <div id="start_qs"></div>
 
 
@@ -38,13 +39,13 @@
 
         // if the url includes uk, then a uk map would be included
         if(url.href.includes('uk')) {
-            // 
-            addMap.innerHTML = '<div class="map_template"><img id="uk_map" src="/uk_map.png"><button id="start_uk" type="button"><a href="./uk/questions">Start Questions</a></button> </div>';
+            // Taken from United Kingdom (UK) regions map (n.d)
+            addMap.innerHTML = '<div class="map_template"><img id="uk_map" src="/uk_map.png"><button id="start_uk" type="button"><a href="/uk/questions">Start Questions</a></button> </div>';
         }
         // if the url includes uk, then a ghana map would be included
         else if(url.href.includes('ghana')) {
             // Figure from Ababio, Adi and Commey (2013, p.132)
-            addMap.innerHTML = '<div class="map_template"><img id="ghana_map" src="/ghana_map.jpg"><button id="start_ghana" type="button"><a href="./ghana/questions">Start Questions</a></button> </div>';
+            addMap.innerHTML = '<div class="map_template"><img id="ghana_map" src="/ghana_map.jpg"><button id="start_ghana" type="button"><a href="/ghana/questions">Start Questions</a></button> </div>';
         }
         // if the url includes uk, then a usa map would be included
         else if(url.href.includes('usa')) {

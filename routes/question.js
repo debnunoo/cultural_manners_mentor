@@ -1,6 +1,7 @@
 // variable to store individual questions for learning about uk culture
 // variable holds question number, media (images or videos), options for each individual questions and if the answer is correct or not
 var uk_q = [
+    // photo taken from Robson (2017)
     {
         "number": "1",
         "question": "You are on holiday and decide to visit Buckingham Palace. You are arrive and see people queuing. What do you do?",
@@ -23,6 +24,7 @@ var uk_q = [
             {"options": "Leave them and wait for them to continue walking.", "correct": false}
         ]
     },
+    // video taken from kaith3pro (2023)
     {
         "number": "3",
         "question": "From the following video, who would be considered to be in the wrong?",
@@ -60,6 +62,7 @@ var uk_q = [
 // variable to store individual questions for learning about usa culture
 // variable holds question number, media (images or videos), options for each individual questions and if the answer is correct or not
 var gh_q = [
+    // photo taken from Looking into the Ghanaian culture (2017)
     {    
         "number": "1",
         "question": "You attend an event, why is it important to greet others upon arrival?",
@@ -92,6 +95,7 @@ var gh_q = [
             {"options": "Showing love and care to animals", "correct": false}
         ]
     },
+    // photo taken from Ghana the Black Star of Africa (2021)
     {
         "number": "4",
         "question": "Which of the following is encourged during interactions between Ghanaian elders and young people?",
@@ -118,6 +122,7 @@ var gh_q = [
 // variable to store individual questions for learning about usa culture
 // variable holds question number, media (images or videos), options for each individual questions and if the answer is correct or not
 var usa_q = [
+    // law taken from CHAPTER 94: HEALTH AND SANITATION (n.d) and Section 14: Spitting (n.d)
     {
         "number": "1",
         "question": "In certain states, such as Texas and Massachusetts, is it illegal to spit on sidewalk(s)?",
@@ -127,6 +132,7 @@ var usa_q = [
             {"options": "False", "correct": false, "disabled": false}
         ]
     },
+    // video from CNN (2016)
     {
         "number": "2",
         "question":"What is happening in the video above and what should be done?",
@@ -149,6 +155,7 @@ var usa_q = [
             {"options": "Changing lanes to provide room for those joining the highway", "correct": true, "disabled": false}
         ]
     },
+    // photo taken from Two people hugging each other (2014)
     {
         "number": "4",
         "question": "In the US, it is the norm to greet and smile at people solely in public?",
