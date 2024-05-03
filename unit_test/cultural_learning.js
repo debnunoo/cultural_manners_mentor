@@ -19,7 +19,7 @@ function checkAnswer(questionNumber, answerCorrect, selectedAnswer) {
     if(selectedAnswer && answerCorrect === 'true') {
         // if it is, increment the score by 1
         score++;
-        // using sessionStorage to temporarily store the score within the browser (ref)
+        // using sessionStorage to temporarily store the score within the browser (Window sessionstorage, n.d)
         sessionStorage.setItem('score', score) || 0;
         answer_check.innerHTML = '<div class="answer_imgs"><img id="correct_answer" src="/tick.png"></div>';
 
@@ -36,7 +36,7 @@ function checkAnswer(questionNumber, answerCorrect, selectedAnswer) {
     if(selectedAnswer) {
         // if user selects an answer, increment questionCount by 1
         questionCount++;
-        // using sessionStorage to temporarily store the questionCount within the browser (ref)
+        // using sessionStorage to temporarily store the questionCount within the browser (Window sessionstorage, n.d)
         sessionStorage.setItem('questionCount', questionCount);
     }
     else {
